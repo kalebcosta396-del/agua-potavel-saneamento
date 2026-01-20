@@ -1,242 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <title>Água Potável e Saneamento - Kaleb e Maicon</title>
-    <style>
-        /* Reset simples */
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #f0f8ff;
-            color: #222;
-        }
-        header {
-            background: linear-gradient(rgba(0,119,182,0.8), rgba(0,150,199,0.8)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.2rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-        }
-        header p {
-            font-size: 1.3rem;
-            margin-top: 0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-        nav {
-            background: #0077b6;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #005f87;
-        }
-        section {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 25px 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        section.background-image {
-            color: white;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
-        }
-        h2 {
-            color: #0077b6;
-            margin-top: 0;
-        }
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        ul li {
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-            display: block;
-        }
-        /* Botões */
-        .btn {
-            display: inline-block;
-            background-color: #0077b6;
-            color: white;
-            padding: 10px 20px;
-            margin: 10px 8px 10px 0;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #005f87;
-        }
-        /* Seção de ajuda */
-        #ajuda ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 0;
-        }
-        #ajuda ul li {
-            list-style: none;
-            background: #0077b6;
-            color: white;
-            margin: 8px;
-            padding: 15px 20px;
-            border-radius: 8px;
-            flex: 1 1 250px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease;
-        }
-        #ajuda ul li:hover {
-            background-color: #005f87;
-        }
-        #ajuda ul li a {
-            color: #d0f0ff;
-            font-weight: 700;
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #023e8a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 1rem;
-        }
-        /* Responsividade simples */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-            #ajuda ul li {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<title>Água Potável e Saneamento - Kaleb e Maicon</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+    color: #222;
+    scroll-behavior: smooth;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(rgba(0,119,182,0.8), rgba(0,150,199,0.8)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80')
+    no-repeat center/cover;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+header p {
+    font-size: 1.3rem;
+}
+
+/* NAV */
+nav {
+    background: #0077b6;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #005f87;
+    transform: scale(1.1);
+}
+
+/* SEÇÕES */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.background-image {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.45);
+}
+
+h2 {
+    color: #0077b6;
+    font-size: 2rem;
+}
+
+p, li {
+    font-size: 1.1rem;
+}
+
+/* IMAGENS */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* BOTÕES */
+.btn {
+    display: inline-block;
+    background: #0077b6;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    background: #005f87;
+    transform: translateY(-5px);
+}
+
+/* FINAL IMPACTANTE */
+footer {
+    background: linear-gradient(to right, #023e8a, #0077b6);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+footer h2 {
+    color: #caf0f8;
+}
+
+footer p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>💧 Água Potável e Saneamento</h1>
-    <p>Conhecimento, saúde e dignidade para todos</p>
-    <p><strong>Autores:</strong> Kaleb e Maicon</p>
+<h1>💧 Água Potável e Saneamento</h1>
+<p>Porque acesso à água limpa é vida, saúde e respeito.</p>
+<p><strong>Autores:</strong> Kaleb e Maicon</p>
 </header>
 
 <nav>
-    <a href="#importancia">Importância</a>
-    <a href="#origem">Origem do Saneamento</a>
-    <a href="#fatores">Principais Fatores</a>
-    <a href="#ajuda">Como Ajudar</a>
+<a href="#importancia">Importância</a>
+<a href="#origem">Origem</a>
+<a href="#fatores">Fatores</a>
+<a href="#ajuda">Como Ajudar</a>
 </nav>
 
 <section id="importancia">
-    <h2>Qual a importância da Água Potável e do Saneamento?</h2>
-    <p>
-        A água potável é fundamental para a vida e a saúde humana. Seu acesso evita doenças
-        causadas por água contaminada, como diarreia, hepatite, cólera e diversas infecções.
-        O saneamento básico é responsável por garantir a qualidade da água e o tratamento dos resíduos,
-        reduzindo impactos ambientais e melhorando a qualidade de vida da população.
-    </p>
-    <img src="https://emtodolugar.facha.edu.br/2021/12/23/o-que-e-saneamento-basico/" alt="Infraestrutura de saneamento básico" />
-    <p>
-        Além do benefício para a saúde, o saneamento também impacta positivamente o desenvolvimento social,
-        econômico e ambiental das comunidades. O acesso à água limpa é reconhecido como direito humano pela ONU.
-    </p>
-    <a href="https://www.who.int/water_sanitation_health/publications/advocacy/wash-advocacy-brief" target="_blank" class="btn">Saiba mais na OMS</a>
+<h2>Por que isso é tão importante?</h2>
+<p>
+A água potável é algo simples, mas essencial. Quando ela falta ou está contaminada,
+milhões de pessoas sofrem com doenças que poderiam ser evitadas.
+Saneamento básico é dignidade, é cuidado com o presente e com o futuro.
+</p>
+
+<img src="https://images.unsplash.com/photo-1581093588401-22d6f7c64f0b?auto=format&fit=crop&w=1200&q=80" alt="Saneamento básico">
+
+<a class="btn" href="https://www.who.int" target="_blank">Saiba mais</a>
 </section>
 
-<section id="origem" class="background-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0c/Roman_aqueduct.jpg');">
-    <h2>Como surgiu o saneamento?</h2>
-    <p>
-        O saneamento básico remonta às antigas civilizações, como a romana, que desenvolveram aquedutos e sistemas de esgoto
-        rudimentares para garantir água limpa e o descarte seguro de resíduos. Esses sistemas foram a base para as soluções modernas,
-        que se tornaram essenciais para a saúde pública, especialmente com o crescimento das cidades.
-    </p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Ancient_Roman_sewage_system_-_Cloaca_Maxima%2C_Rome.jpg" alt="Sistema de esgoto romano antigo" />
-    <a href="https://pt.wikipedia.org/wiki/Saneamento_básico" target="_blank" class="btn">História do saneamento (Wikipedia)</a>
+<section id="origem" class="background-image"
+style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/0/0c/Roman_aqueduct.jpg');">
+
+<h2>De onde tudo começou?</h2>
+<p>
+Desde as civilizações antigas, como os romanos, o ser humano percebeu que
+água limpa e descarte correto de resíduos salvam vidas.
+O que começou simples, hoje é tecnologia e política pública.
+</p>
 </section>
 
 <section id="fatores">
-    <h2>Principais fatores da Água Potável e do Saneamento</h2>
-    <p>Para garantir água potável e saneamento de qualidade, diversos fatores são essenciais:</p>
-    <ul>
-        <li>Captação consciente e sustentável da água</li>
-        <li>Tratamento eficiente para remover impurezas e agentes patogênicos</li>
-        <li>Distribuição segura até as residências</li>
-        <li>Coleta e tratamento adequado do esgoto e resíduos</li>
-        <li>Educação ambiental para uso responsável da água</li>
-        <li>Preservação das nascentes e recursos hídricos</li>
-    </ul>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Water_treatment_plant.jpg" alt="Planta de tratamento de água" />
-    <a href="https://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=35128" target="_blank" class="btn">Mais detalhes no IPEA</a>
+<h2>O que garante água de qualidade?</h2>
+<ul>
+<li>Captação consciente da água</li>
+<li>Tratamento eficiente</li>
+<li>Distribuição segura</li>
+<li>Coleta e tratamento do esgoto</li>
+<li>Educação ambiental</li>
+</ul>
 </section>
 
-<section id="ajuda" class="background-image" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');">
-    <h2>Como você pode ajudar?</h2>
-    <p>
-        Todos nós podemos contribuir para garantir água potável e saneamento para mais pessoas. Veja algumas formas simples e importantes:
-    </p>
-    <ul>
-        <li>Economize água em casa, fechando torneiras e consertando vazamentos</li>
-        <li>Participe de campanhas de conscientização ambiental na sua comunidade</li>
-        <li>Doe para organizações que trabalham com saneamento e água potável</li>
-        <li>Divulgue a importância do tema para amigos e familiares</li>
-        <li>Exija políticas públicas eficazes que garantam saneamento básico</li>
-    </ul>
-    <p>Quer ajudar agora? Confira alguns desses sites:</p>
-    <ul>
-        <li><a href="https://www.unicef.org/wash" target="_blank" class="btn">UNICEF - Água e Saneamento</a></li>
-        <li><a href="https://www.solidarieda.de" target="_blank" class="btn">Solidariedade para água potável</a></li>
-        <li><a href="https://water.org" target="_blank" class="btn">Water.org - Projetos Globais</a></li>
-    </ul>
+<section id="ajuda" class="background-image"
+style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');">
+
+<h2>Você faz parte disso</h2>
+<p>
+Cada pequena atitude conta. Economizar água, conscientizar pessoas
+e cobrar políticas públicas muda realidades.
+</p>
+
+<a class="btn" href="https://www.unicef.org/wash" target="_blank">UNICEF</a>
+<a class="btn" href="https://water.org" target="_blank">Water.org</a>
 </section>
 
 <footer>
-    <p>Trabalho do Cid - Autores: Kaleb e Maicon</p>
+<h2>🌍 Um futuro melhor começa agora</h2>
+<p>
+Água potável não deveria ser privilégio, mas direito.
+Este trabalho é um convite para refletir, agir e cuidar do mundo em que vivemos.
+</p>
+<p><strong>Trabalho escolar — Kaleb & Maicon</strong></p>
 </footer>
 
 </body>
 </html>
-
